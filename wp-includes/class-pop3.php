@@ -11,7 +11,7 @@
  * POP3 class
  *
  * @copyright 1999-2011 The SquirrelMail Project Team
- * @license http://opensource.org/licenses/gpl-license.php GNU Public License
+ * @license https://opensource.org/licenses/gpl-license.php GNU Public License
  * @package plugins
  * @subpackage mail_fetch
  */
@@ -44,7 +44,10 @@ class POP3 {
                                 //  This must be set to true
                                 //  manually
 
-    function POP3 ( $server = '', $timeout = '' ) {
+	/**
+	 * PHP5 constructor.
+	 */
+    function __construct ( $server = '', $timeout = '' ) {
         settype($this->BUFFER,"integer");
         if( !empty($server) ) {
             // Do not allow programs to alter MAILSERVER
@@ -56,15 +59,24 @@ class POP3 {
         if(!empty($timeout)) {
             settype($timeout,"integer");
             $this->TIMEOUT = $timeout;
-            if (!ini_get('safe_mode'))
+            if(function_exists("set_time_limit")){
                 set_time_limit($timeout);
+            }
         }
         return true;
     }
 
+	/**
+	 * PHP4 constructor.
+	 */
+	public function POP3( $server = '', $timeout = '' ) {
+		self::__construct( $server, $timeout );
+	}
+
     function update_timer () {
-        if (!ini_get('safe_mode'))
+        if(function_exists("set_time_limit")){
             set_time_limit($this->TIMEOUT);
+        }
         return true;
     }
 
@@ -72,7 +84,7 @@ class POP3 {
         //  Opens a socket to the specified server. Unless overridden,
         //  port defaults to 110. Returns true on success, false on fail
 
-        // If MAILSERVER is set, override $server with it's value
+        // If MAILSERVER is set, override $server with its value.
 
     if (!isset($port) || !$port) {$port = 110;}
         if(!empty($this->MAILSERVER))
@@ -366,7 +378,7 @@ class POP3 {
         $line = fgets($fp,$buffer);
         while ( !preg_match('/^\.\r\n/',$line))
         {
-            if ( $line{0} == '.' ) { $line = substr($line,1); }
+            if ( $line[0] == '.' ) { $line = substr($line,1); }
             $MsgArray[$count] = $line;
             $count++;
             $line = fgets($fp,$buffer);
@@ -420,7 +432,7 @@ class POP3 {
         if(!$this->is_ok($reply))
         {
             //  The POP3 RSET command -never- gives a -ERR
-            //  response - if it ever does, something truely
+            //  response - if it ever does, something truly
             //  wild is going on.
 
             $this->ERROR = "POP3 reset: " . _("Error ") . "[$reply]";
@@ -435,7 +447,7 @@ class POP3 {
         //  Sends a user defined command string to the
         //  POP server and returns the results. Useful for
         //  non-compliant or custom POP servers.
-        //  Do NOT includ the \r\n as part of your command
+        //  Do NOT include the \r\n as part of your command
         //  string - it will be appended automatically.
 
         //  The return value is a standard fgets() call, which

@@ -1,0 +1,48 @@
+# Translation of Plugins - Multiple Post Thumbnails - Stable (latest release) in Russian
+# This file is distributed under the same license as the Plugins - Multiple Post Thumbnails - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2019-09-20 08:03:44+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: ru\n"
+"Project-Id-Version: Plugins - Multiple Post Thumbnails - Stable (latest release)\n"
+
+#. Author URI of the plugin/theme
+msgid "http://iamzed.com/"
+msgstr "http://iamzed.com/"
+
+#. Author of the plugin/theme
+msgid "Chris Scott"
+msgstr "Chris Scott"
+
+#. Description of the plugin/theme
+msgid "Adds the ability to add multiple post thumbnails to a post type."
+msgstr "Добавляет возможность добавления нескольких миниатюр в запись."
+
+#. Plugin URI of the plugin/theme
+msgid "http://wordpress.org/extend/plugins/multiple-post-thumbnails/"
+msgstr "http://wordpress.org/extend/plugins/multiple-post-thumbnails/"
+
+#. Plugin Name of the plugin/theme
+msgid "Multiple Post Thumbnails"
+msgstr "Multiple Post Thumbnails"
+
+#: multi-post-thumbnails.php:425
+msgid "Remove %s"
+msgstr "Удалить %s"
+
+#: multi-post-thumbnails.php:408 multi-post-thumbnails.php:409
+msgid "Set %s"
+msgstr "Установить %s"
+
+#: multi-post-thumbnails.php:167
+msgid "Set as %3$s"
+msgstr "Установить как %3$s"
+
+#: multi-post-thumbnails.php:85
+msgid "The 'label' and 'id' values of the 'args' parameter of '%s::%s()' are required"
+msgstr "Требуются значения 'label' и 'id' параметра 'args' в '%s::%s()'"

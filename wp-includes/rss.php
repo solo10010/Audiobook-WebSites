@@ -16,7 +16,7 @@
 /**
  * Deprecated. Use SimplePie (class-simplepie.php) instead.
  */
-_deprecated_file( basename( __FILE__ ), '3.0', WPINC . '/class-simplepie.php' );
+_deprecated_file( basename( __FILE__ ), '3.0.0', WPINC . '/class-simplepie.php' );
 
 /**
  * Fires before MagpieRSS is loaded, to optionally replace it.
@@ -55,17 +55,19 @@ class MagpieRSS {
 
 	var $_CONTENT_CONSTRUCTS = array('content', 'summary', 'info', 'title', 'tagline', 'copyright');
 
-	function MagpieRSS ($source) {
+	/**
+	 * PHP5 constructor.
+	 */
+	function __construct( $source ) {
 
-		# if PHP xml isn't compiled in, die
+		# Check if PHP xml isn't compiled
 		#
-		if ( !function_exists('xml_parser_create') )
-			trigger_error( "Failed to load PHP's XML Extension. http://www.php.net/manual/en/ref.xml.php" );
+		if ( ! function_exists('xml_parser_create') ) {
+			wp_trigger_error( '', "PHP's XML extension is not available. Please contact your hosting provider to enable PHP's XML extension." );
+			return;
+		}
 
-		$parser = @xml_parser_create();
-
-		if ( !is_resource($parser) )
-			trigger_error( "Failed to create an instance of PHP's XML parser. http://www.php.net/manual/en/ref.xml.php");
+		$parser = xml_parser_create();
 
 		$this->parser = $parser;
 
@@ -93,8 +95,16 @@ class MagpieRSS {
 		}
 
 		xml_parser_free( $this->parser );
+		unset( $this->parser );
 
 		$this->normalize();
+	}
+
+	/**
+	 * PHP4 constructor.
+	 */
+	public function MagpieRSS( $source ) {
+		self::__construct( $source );
 	}
 
 	function feed_start_element($p, $element, &$attrs) {
@@ -104,7 +114,7 @@ class MagpieRSS {
 		// check for a namespace, and split if found
 		$ns	= false;
 		if ( strpos( $element, ':' ) ) {
-			list($ns, $el) = split( ':', $element, 2);
+			list($ns, $el) = explode( ':', $element, 2);
 		}
 		if ( $ns and $ns != 'rdf' ) {
 			$this->current_namespace = $ns;
@@ -186,7 +196,7 @@ class MagpieRSS {
 			array_unshift( $this->stack, $el );
 		}
 
-		// Atom support many links per containging element.
+		// Atom support many links per containing element.
 		// Magpie treats link elements of type rel='alternate'
 		// as being equivalent to RSS's simple link element.
 		//
@@ -329,7 +339,7 @@ class MagpieRSS {
 	function normalize () {
 		// if atom populate rss fields
 		if ( $this->is_atom() ) {
-			$this->channel['descripton'] = $this->channel['tagline'];
+			$this->channel['description'] = $this->channel['tagline'];
 			for ( $i = 0; $i < count($this->items); $i++) {
 				$item = $this->items[$i];
 				if ( isset($item['summary']) )
@@ -377,12 +387,8 @@ class MagpieRSS {
 	}
 
 	function error( $errormsg, $lvl = E_USER_WARNING ) {
-		// append PHP's error message if track_errors enabled
-		if ( isset($php_errormsg) ) {
-			$errormsg .= " ($php_errormsg)";
-		}
 		if ( MAGPIE_DEBUG ) {
-			trigger_error( $errormsg, $lvl);
+			wp_trigger_error('', $errormsg, $lvl);
 		} else {
 			error_log( $errormsg, 0);
 		}
@@ -398,8 +404,8 @@ if ( !function_exists('fetch_rss') ) :
  * @package External
  * @subpackage MagpieRSS
  *
- * @param string $url URL to retrieve feed
- * @return bool|MagpieRSS false on failure or MagpieRSS object on success.
+ * @param string $url URL to retrieve feed.
+ * @return MagpieRSS|false MagpieRSS object on success, false on failure.
  */
 function fetch_rss ($url) {
 	// initialize constants
@@ -495,7 +501,7 @@ function fetch_rss ($url) {
 			else {
 				$errormsg = "Failed to fetch $url. ";
 				if ( $resp->error ) {
-					# compensate for Snoopy's annoying habbit to tacking
+					# compensate for Snoopy's annoying habit to tacking
 					# on '\n'
 					$http_error = substr($resp->error, 0, -2);
 					$errormsg .= "(HTTP Error: $http_error)";
@@ -536,7 +542,7 @@ endif;
  * @subpackage MagpieRSS
  *
  * @param string $url URL to retrieve
- * @param array $headers Optional. Headers to send to the URL.
+ * @param array $headers Optional. Headers to send to the URL. Default empty string.
  * @return Snoopy style response
  */
 function _fetch_remote_file($url, $headers = "" ) {
@@ -589,7 +595,7 @@ function _response_to_rss ($resp) {
 	if ( $rss && (!isset($rss->ERROR) || !$rss->ERROR) ) {
 
 		// find Etag, and Last-Modified
-		foreach( (array) $resp->headers as $h) {
+		foreach ( (array) $resp->headers as $h) {
 			// 2003-03-02 - Nicola Asuni (www.tecnick.com) - fixed bug "Undefined offset: 1"
 			if (strpos($h, ": ")) {
 				list($field, $val) = explode(": ", $h, 2);
@@ -626,6 +632,9 @@ function _response_to_rss ($resp) {
  * Set up constants with default values, unless user overrides.
  *
  * @since 1.5.0
+ * 
+ * @global string $wp_version The WordPress version string.
+ * 
  * @package External
  * @subpackage MagpieRSS
  */
@@ -709,7 +718,10 @@ class RSSCache {
 	var $MAX_AGE	= 43200;  		// when are files stale, default twelve hours
 	var $ERROR 		= '';			// accumulate error messages
 
-	function RSSCache ($base='', $age='') {
+	/**
+	 * PHP5 constructor.
+	 */
+	function __construct( $base = '', $age = '' ) {
 		$this->BASE_CACHE = WP_CONTENT_DIR . '/cache';
 		if ( $base ) {
 			$this->BASE_CACHE = $base;
@@ -720,10 +732,17 @@ class RSSCache {
 
 	}
 
+	/**
+	 * PHP4 constructor.
+	 */
+	public function RSSCache( $base = '', $age = '' ) {
+		self::__construct( $base, $age );
+	}
+
 /*=======================================================================*\
 	Function:	set
 	Purpose:	add an item to the cache, keyed on url
-	Input:		url from wich the rss file was fetched
+	Input:		url from which the rss file was fetched
 	Output:		true on success
 \*=======================================================================*/
 	function set ($url, $rss) {
@@ -737,7 +756,7 @@ class RSSCache {
 /*=======================================================================*\
 	Function:	get
 	Purpose:	fetch an item from the cache
-	Input:		url from wich the rss file was fetched
+	Input:		url from which the rss file was fetched
 	Output:		cached object on HIT, false on MISS
 \*=======================================================================*/
 	function get ($url) {
@@ -746,7 +765,7 @@ class RSSCache {
 
 		if ( ! $rss = get_transient( $cache_option ) ) {
 			$this->debug(
-				"Cache doesn't contain: $url (cache option: $cache_option)"
+				"Cache does not contain: $url (cache option: $cache_option)"
 			);
 			return 0;
 		}
@@ -758,7 +777,7 @@ class RSSCache {
 	Function:	check_cache
 	Purpose:	check a url for membership in the cache
 				and whether the object is older then MAX_AGE (ie. STALE)
-	Input:		url from wich the rss file was fetched
+	Input:		url from which the rss file was fetched
 	Output:		cached object on HIT, false on MISS
 \*=======================================================================*/
 	function check_cache ( $url ) {
@@ -791,7 +810,7 @@ class RSSCache {
 /*=======================================================================*\
 	Function:	file_name
 	Purpose:	map url to location in cache
-	Input:		url from wich the rss file was fetched
+	Input:		url from which the rss file was fetched
 	Output:		a file name
 \*=======================================================================*/
 	function file_name ($url) {
@@ -803,13 +822,9 @@ class RSSCache {
 	Purpose:	register error
 \*=======================================================================*/
 	function error ($errormsg, $lvl=E_USER_WARNING) {
-		// append PHP's error message if track_errors enabled
-		if ( isset($php_errormsg) ) {
-			$errormsg .= " ($php_errormsg)";
-		}
 		$this->ERROR = $errormsg;
 		if ( MAGPIE_DEBUG ) {
-			trigger_error( $errormsg, $lvl);
+			wp_trigger_error( '', $errormsg, $lvl);
 		}
 		else {
 			error_log( $errormsg, 0);
@@ -825,7 +840,7 @@ class RSSCache {
 if ( !function_exists('parse_w3cdtf') ) :
 function parse_w3cdtf ( $date_str ) {
 
-	# regex to match wc3dtf
+	# regex to match W3C date/time formats
 	$pat = "/(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})(:(\d{2}))?(?:([-+])(\d{2}):?(\d{2})|(Z))?/";
 
 	if ( preg_match( $pat, $date_str, $match ) ) {

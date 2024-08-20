@@ -1,263 +1,487 @@
-# Translation of Twenty Thirteen in Russian
-# This file is distributed under the same license as the Twenty Thirteen package.
+# Translation of Themes - Twenty Thirteen in Russian
+# This file is distributed under the same license as the Themes - Twenty Thirteen package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-03-26 16:19:23+0000\n"
+"PO-Revision-Date: 2023-06-04 11:47:19+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: GlotPress/1.0-alpha-1000\n"
-"Project-Id-Version: Twenty Thirteen\n"
+"Plural-Forms: nplurals=3; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : ((n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14)) ? 1 : 2);\n"
+"X-Generator: GlotPress/4.0.0\n"
+"Language: ru\n"
+"Project-Id-Version: Themes - Twenty Thirteen\n"
 
-#. Author of the plugin/theme
-msgid "the WordPress team"
-msgstr "Команда WordPress"
+#. Description of the theme
+#: style.css
+#, gp-priority: high
+msgid "The 2013 theme for WordPress takes us back to the blog, featuring a full range of post formats, each displayed beautifully in their own unique way. Design details abound, starting with a vibrant color scheme and matching header images, beautiful typography and icons, and a flexible layout that looks great on any device, big or small."
+msgstr "Тема 2013 для WordPress заново открывает для нас ведение блога, предоставляя полный набор форматов записей, каждый из которых отображается в своём неповторимом стиле. Дизайн изобилует тщательно подобранными элементами, начиная с яркой цветовой схемы и соответствующих изображений заголовка, красивой типографики и иконок, а также гибкой разметки, которая превосходно выглядит на любых устройствах, больших и маленьких."
 
-#: content-none.php:12
-msgid "Nothing Found"
-msgstr "Не найдено"
+#. Theme Name of the theme
+#: style.css inc/block-patterns.php:20
+#, gp-priority: high
+msgid "Twenty Thirteen"
+msgstr "Twenty Thirteen"
 
-#: comments.php:25
+#: functions.php:194
+msgid "Dark Sky"
+msgstr "Темное небо"
+
+#: functions.php:189
+msgid "Light Sky"
+msgstr "Светлое небо"
+
+#: functions.php:184
+msgid "Sunset Yellow"
+msgstr "Желтый закат"
+
+#: functions.php:179
+msgid "Autumn Brown"
+msgstr "Осенний коричневый"
+
+#. translators: 1: Date, 2: Date, 3, Parent permalink, 4, Post title, 5: Post
+#. title.
+#: image.php:30
+msgid "Published on <time class=\"entry-date\" datetime=\"%1$s\">%2$s</time> in <a href=\"%3$s\" title=\"Go to %4$s\" rel=\"gallery\">%5$s</a>"
+msgstr "Опубликовано <time class=\"entry-date\" datetime=\"%1$s\">%2$s</time> в <a href=\"%3$s\" title=\"Перейти к %4$s\" rel=\"gallery\">%5$s</a>"
+
+#: inc/block-patterns.php:162
+msgid "Neil Armstrong<br>James Lovell Jr.<br>Dr. Sally Ride<br>Chris Hadfield"
+msgstr "Neil Armstrong<br>James Lovell Jr.<br>Dr. Sally Ride<br>Chris Hadfield"
+
+#: inc/block-patterns.php:156
+msgid "Yuri Gagarin<br>Alan B. Shepard Jr.<br>Valentina Tereshkova<br>John Glenn Jr."
+msgstr "Юрий Гагарин<br>lan B. Shepard Jr.<br>Валентина Терешкова<br>John Glenn Jr."
+
+#: inc/block-patterns.php:150
+msgid "FAMOUS ASTRONAUTS"
+msgstr "Знаменитые космонавты"
+
+#: inc/block-patterns.php:146
+msgid "Informational List"
+msgstr "Информационный список"
+
+#: inc/block-patterns.php:136
+msgid "When you look at the stars and the galaxy, you feel that you are not just from any particular piece of land, but from the solar system."
+msgstr "Когда вы смотрите на звезды и галактику, вы чувствуете, что вы не просто с какой-то определенной местности, а из Солнечной системы."
+
+#: inc/block-patterns.php:127
+msgid "Big Quote"
+msgstr "Большая цитата"
+
+#: inc/block-patterns.php:116 inc/block-patterns.php:136
+msgid "Kalpana Chawla"
+msgstr "Калпана Чавла"
+
+#: inc/block-patterns.php:116
+msgid "When you look at <br>the stars and the galaxy, you feel that you are not <br>just from any particular piece of land, but from the solar system."
+msgstr "Когда вы смотрите на <br>звезды и галактику, вы чувствуете,<br> что вы не просто с какой-то определенной местности, а из Солнечной системы."
+
+#: inc/block-patterns.php:104
+msgid "Callout Quote"
+msgstr "Выноска цитаты"
+
+#: inc/block-patterns.php:92
+msgid "Colonies"
+msgstr "Колонии"
+
+#: inc/block-patterns.php:76
+msgid "Space"
+msgstr "Пространство"
+
+#: inc/block-patterns.php:75 inc/block-patterns.php:83
+#: inc/block-patterns.php:91
+msgid "Write title…"
+msgstr "Введите заголовок..."
+
+#: inc/block-patterns.php:70
+msgid "Decorative Columns"
+msgstr "Декоративные столбцы"
+
+#: inc/block-patterns.php:59
+msgid "Discover More"
+msgstr "Узнать больше"
+
+#: inc/block-patterns.php:54
+msgid "In the 1970s, NASA's Ames Research Center illustrated some explorations around what future space colonies could look like. This piece, illustrated by Rick Guidice, shows the inside of a toroidal shaped colony."
+msgstr "В 1970-х годах Исследовательский центр Эймса НАСА проиллюстрировал некоторые исследования того, как могут выглядеть будущие космические колонии. На этом фрагменте, проиллюстрированном Риком Гуидисом, изображена внутренняя часть колонии тороидальной формы."
+
+#: inc/block-patterns.php:50
+msgid "Exploring Space"
+msgstr "Исследования космоса"
+
+#: inc/block-patterns.php:46
+msgid "Informational Section"
+msgstr "Раздел информации"
+
+#: inc/block-patterns.php:36 inc/block-patterns.php:132
+msgid "NASA Space Colony illustration, cutaway view of Bernal Sphere. The interior of the sphere is filled with greenery and houses, and a star shines brightly behind the colony."
+msgstr "Иллюстрация космической колонии НАСА, вид Берналь-сферы в разрезе. Внутренняя часть сферы заполнена зеленью и домами, а за колонией ярко сияет звезда."
+
+#: inc/block-patterns.php:36
+msgid "NASA Space Colony illustration, cutaway view, exposing the interior of a toroidal colony. Trees and densely-packed housing line the inside of the torus."
+msgstr "Иллюстрация космической колонии НАСА, вид в разрезе, открывающий внутреннюю часть тороидальной колонии. Деревья и густонаселенные дома выстилают внутреннюю часть тора."
+
+#: inc/block-patterns.php:36
+msgid "Solid orange square"
+msgstr "Сплошной оранжевый квадрат"
+
+#: inc/block-patterns.php:36
+msgid "NASA Space Colony illustration, interior view of a cylindrical space colony, looking out through large windows. The interior contains fields, forests, and a river snaking from the foreground into the background. Low clouds hang over the land."
+msgstr "Иллюстрация космической колонии НАСА, внутренний вид цилиндрической космической колонии, вид через большие окна. В интерьере есть поля, леса и река, извивающаяся с переднего плана на задний план. Низкие облака висят над землей."
+
+#: inc/block-patterns.php:36
+msgid "NASA Space Colony illustration, interior view of torus colony. Public spaces appear in the foreground of the torus, while housing, rolling hills, and a river snake up into the background."
+msgstr "Иллюстрация космической колонии НАСА, внутренний вид колонии тора. Общественные места появляются на переднем плане тора, а жилые дома, холмистая местность и змейка реки уходят на задний план."
+
+#: inc/block-patterns.php:36
+msgid "Solid red square"
+msgstr "Сплошной красный квадрат"
+
+#: inc/block-patterns.php:32
+msgid "Decorative Gallery"
+msgstr "Декоративная галерея"
+
+#: functions.php:933
+msgid "No Shadow"
+msgstr "Без тени"
+
+#. translators: %s: The post title.
+#: comments.php:29
 msgctxt "comments title"
-msgid "One thought on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] "%2$s: Один комментарий"
-msgstr[1] "%2$s: %1$s комментария"
-msgstr[2] "%2$s: %1$s комментариев"
+msgid "One thought on &ldquo;%s&rdquo;"
+msgstr "Один комментарий к &ldquo;%s&rdquo;"
 
-#: inc/custom-header.php:54
-msgctxt "header image description"
-msgid "Diamond"
-msgstr "Алмаз"
+#: functions.php:167
+msgid "Off-white"
+msgstr "Не белая"
 
-#: inc/custom-header.php:59
+#: functions.php:162
+msgid "Beige"
+msgstr "Бежевая"
+
+#: functions.php:157
+msgid "Light Brown"
+msgstr "Светло-коричневая"
+
+#: functions.php:152
+msgid "Medium Brown"
+msgstr "Средне-коричневая"
+
+#: functions.php:147
+msgid "Dark Brown"
+msgstr "Темно-коричневая"
+
+#: functions.php:142
+msgid "White"
+msgstr "Белая"
+
+#: functions.php:137
+msgid "Yellow"
+msgstr "Желтая"
+
+#: functions.php:132
+msgid "Light Orange"
+msgstr "Светло-оранжевая"
+
+#: functions.php:127
+msgid "Medium Orange"
+msgstr "Средне-оранжевая"
+
+#: functions.php:122
+msgid "Red"
+msgstr "Красная"
+
+#: functions.php:117
+msgid "Dark Gray"
+msgstr "Темно-серая"
+
+#. translators: %s: Post format name.
+#: taxonomy-post_format.php:26
+msgid "%s Archives"
+msgstr "Архив формата &laquo;%s&raquo;"
+
+#. translators: Tag title.
+#: tag.php:24
+msgid "Tag Archives: %s"
+msgstr "Архив метки: %s"
+
+#. translators: %s: Search query.
+#: search.php:21
+msgid "Search Results for: %s"
+msgstr "Результаты поиска: %s"
+
+#: inc/custom-header.php:60
 msgctxt "header image description"
 msgid "Star"
 msgstr "Звезда"
 
-#: search.php:18
-msgid "Search Results for: %s"
-msgstr "Результаты поиска: %s"
+#: inc/custom-header.php:55
+msgctxt "header image description"
+msgid "Diamond"
+msgstr "Алмаз"
 
-#: tag.php:21
-msgid "Tag Archives: %s"
-msgstr "Архив метки: %s"
-
-#: taxonomy-post_format.php:23
-msgid "%s Archives"
-msgstr "Архив формата &laquo;%s&raquo;"
-
-#. Theme Name of the plugin/theme
-msgid "Twenty Thirteen"
-msgstr "Twenty Thirteen"
-
-#: inc/custom-header.php:49
+#: inc/custom-header.php:50
 msgctxt "header image description"
 msgid "Circle"
 msgstr "Круг"
 
-#: image.php:52
+#. translators: %s: WordPress version.
+#: inc/back-compat.php:41 inc/back-compat.php:56 inc/back-compat.php:77
+msgid "Twenty Thirteen requires at least WordPress version 3.6. You are running version %s. Please upgrade and try again."
+msgstr "Тема Twenty Thirteen требует WordPress 3.6 или выше. У вас версия %s. Пожалуйста, обновите WordPress и попробуйте ещё раз."
+
+#: image.php:64
 msgid "Next <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Следующее <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Следующая <span class=\"meta-nav\">&rarr;</span>"
+
+#: image.php:63
+msgid "<span class=\"meta-nav\">&larr;</span> Previous"
+msgstr "<span class=\"meta-nav\">&larr;</span> Предыдущая"
 
 #: image.php:51
-msgid "<span class=\"meta-nav\">&larr;</span> Previous"
-msgstr "<span class=\"meta-nav\">&larr;</span> Предыдущее"
+msgid "Full resolution"
+msgstr "Полный размер"
 
-#: image.php:22
-msgid "<span class=\"attachment-meta\">Published on <time class=\"entry-date\" datetime=\"%1$s\">%2$s</time> in <a href=\"%3$s\" title=\"Return to %4$s\" rel=\"gallery\">%5$s</a></span>"
-msgstr "<span class=\"attachment-meta\">Опубликовано <time class=\"entry-date\" datetime=\"%1$s\">%2$s</time> в галерее <a href=\"%3$s\" title=\"Вернуться: %4$s\" rel=\"gallery\">%5$s</a></span>"
+#: image.php:50
+msgid "Link to full-size image"
+msgstr "Ссылка на полноразмерное изображение"
 
-#: header.php:44
+#. translators: Hidden accessibility text.
+#: header.php:37
 msgid "Skip to content"
 msgstr "Перейти к содержимому"
 
-#: header.php:43
+#: header.php:33
 msgid "Menu"
 msgstr "Меню"
 
-#: functions.php:304
-msgctxt "Next post link"
-msgid "%title <span class=\"meta-nav\">&rarr;</span>"
-msgstr "%title <span class=\"meta-nav\">&rarr;</span>"
+#. translators: %s: Post title.
+#: functions.php:618
+msgid "Permalink to %s"
+msgstr "Постоянная ссылка: %s"
 
-#: functions.php:322
-msgid "Sticky"
-msgstr "Прилеплена"
-
-#. Translators: used between list items, there is a space after the comma.
-#: functions.php:328 functions.php:334
-msgid ", "
-msgstr ", "
-
-#: functions.php:343
-msgid "View all posts by %s"
-msgstr "Посмотреть все записи автора %s"
-
-#: functions.php:363
+#. translators: 1: Post format name, 2: Date.
+#: functions.php:609
 msgctxt "1: post format name. 2: date"
 msgid "%1$s on %2$s"
 msgstr "%1$s от %2$s"
 
-#: functions.php:369
-msgid "Permalink to %s"
-msgstr "Постоянная ссылка: %s"
+#. translators: %s: Author display name.
+#: functions.php:588
+msgid "View all posts by %s"
+msgstr "Посмотреть все записи автора %s"
 
-#: functions.php:274
-msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Следующие записи <span class=\"meta-nav\">&rarr;</span>"
+#. translators: Used between list items, there is a space after the comma.
+#: functions.php:477
+msgid ", "
+msgstr ", "
 
-#: functions.php:300
-msgid "Post navigation"
-msgstr "Навигация по записям"
+#: functions.php:565
+msgid "Sticky"
+msgstr "Прилеплена"
 
-#: functions.php:303
+#: functions.php:547
+msgctxt "Next post link"
+msgid "%title <span class=\"meta-nav\">&rarr;</span>"
+msgstr "%title <span class=\"meta-nav\">&rarr;</span>"
+
+#: functions.php:546
 msgctxt "Previous post link"
 msgid "<span class=\"meta-nav\">&larr;</span> %title"
 msgstr "<span class=\"meta-nav\">&larr;</span> %title"
 
-#. Translators: If there are characters in your language that are not supported
+#. translators: Hidden accessibility text.
+#: functions.php:541
+msgid "Post navigation"
+msgstr "Навигация по записям"
+
+#: functions.php:509
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Следующие записи <span class=\"meta-nav\">&rarr;</span>"
+
+#: functions.php:505
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> Предыдущие записи"
+
+#. translators: Hidden accessibility text.
+#: functions.php:499
+msgid "Posts navigation"
+msgstr "Навигация по записям"
+
+#: functions.php:457
+msgid "Appears on posts and pages in the sidebar."
+msgstr "Отображается в боковой колонке в записях и на страницах."
+
+#: functions.php:455
+msgid "Secondary Widget Area"
+msgstr "Дополнительная область"
+
+#: functions.php:445
+msgid "Appears in the footer section of the site."
+msgstr "Отображается в нижней части сайта."
+
+#: functions.php:443
+msgid "Main Widget Area"
+msgstr "Основная область"
+
+#. translators: %s: Page number.
+#: functions.php:428
+msgid "Page %s"
+msgstr "Страница %s"
+
+#. translators: If there are characters in your language that are not supported
 #. by Bitter, translate this to 'off'. Do not translate into your own language.
-#: functions.php:134
+#: functions.php:284
 msgctxt "Bitter font: on or off"
 msgid "on"
 msgstr "on"
 
-#: functions.php:218
-msgid "Page %s"
-msgstr "Страница %s"
-
-#: functions.php:266
-msgid "Posts navigation"
-msgstr "Навигация по записям"
-
-#: functions.php:270
-msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr "<span class=\"meta-nav\">&larr;</span> Предыдущие записи"
-
-#. Translators: If there are characters in your language that are not supported
+#. translators: If there are characters in your language that are not supported
 #. by Source Sans Pro, translate this to 'off'. Do not translate into your own
 #. language.
-#: functions.php:128
+#: functions.php:278
 msgctxt "Source Sans Pro font: on or off"
 msgid "on"
 msgstr "on"
 
-#: functions.php:97
+#: functions.php:242
 msgid "Navigation Menu"
 msgstr "Меню навигации"
 
-#: footer.php:19
+#. translators: %s: WordPress
+#: footer.php:27
 msgid "Proudly powered by %s"
 msgstr "Сайт работает на %s"
 
-#: footer.php:19
-msgid "Semantic Personal Publishing Platform"
-msgstr "Современная персональная платформа для публикаций"
-
-#. #-#-#-#-#  twentythirteen.pot (Twenty Thirteen 1.4)  #-#-#-#-#
-#. Author URI of the plugin/theme
-#: footer.php:19
-msgid "http://wordpress.org/"
-msgstr "http://wordpress.org/"
-
-#: content-none.php:27
+#: content-none.php:32
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr "Запрошенную информацию найти не удалось. Возможно, будет полезен поиск по сайту."
 
-#: content-none.php:22
+#: content-none.php:27
 msgid "Sorry, but nothing matched your search terms. Please try again with different keywords."
 msgstr "Извините, по вашему запросу ничего не найдено. Попробуйте другие ключевые слова."
 
-#: content-gallery.php:43 content-image.php:39 content-quote.php:29
-#: content-video.php:39 content.php:56
-msgid "One comment so far"
-msgstr "1 комментарий"
+#. translators: %s: Post editor URL.
+#: content-none.php:21
+msgid "Ready to publish your first post? <a href=\"%s\">Get started here</a>."
+msgstr "Готовы опубликовать свою первую запись? <a href=\"%s\">Начните отсюда</a>."
 
-#: content-gallery.php:43 content-image.php:39 content-quote.php:29
-#: content-video.php:39 content.php:56
+#: content-none.php:12
+msgid "Nothing Found"
+msgstr "Ничего не найдено"
+
+#: content-gallery.php:52 content-image.php:48 content-quote.php:38
+#: content-video.php:48 content.php:65
 msgid "View all % comments"
 msgstr "Комментарии (%)"
 
-#: content-none.php:18
-msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr "Готовы опубликовать свою первую запись? <a href=\"%1$s\">Начните отсюда</a>."
+#: content-gallery.php:52 content-image.php:48 content-quote.php:38
+#: content-video.php:48 content.php:65
+msgid "One comment so far"
+msgstr "1 комментарий"
 
-#: content-gallery.php:43 content-image.php:39 content-quote.php:29
-#: content-video.php:39 content.php:56
+#: content-gallery.php:52 content-image.php:48 content-quote.php:38
+#: content-video.php:48 content.php:65
 msgid "Leave a comment"
-msgstr "Добавить комментарий"
+msgstr "Оставить комментарий"
 
-#: comments.php:52
-msgid "Comments are closed."
-msgstr "Комментарии запрещены."
-
-#: content-aside.php:20 content-audio.php:31 content-chat.php:30
-#: content-gallery.php:31 content-image.php:30 content-link.php:31
-#: content-quote.php:20 content-status.php:20 content-video.php:30
-#: content.php:48 image.php:70 page.php:35
-msgid "Pages:"
-msgstr "Страницы:"
-
-#: content-aside.php:27 content-aside.php:35 content-audio.php:38
-#: content-chat.php:36 content-gallery.php:46 content-image.php:42
-#: content-link.php:19 content-quote.php:32 content-status.php:26
-#: content-video.php:42 content.php:31 image.php:44 page.php:39
+#: content-aside.php:36 content-aside.php:44 content-audio.php:47
+#: content-chat.php:45 content-gallery.php:55 content-image.php:51
+#: content-link.php:19 content-quote.php:41 content-status.php:35
+#: content-video.php:51 content.php:31 image.php:56 page.php:51
 msgid "Edit"
 msgstr "Изменить"
 
-#: comments.php:47
+#: content-aside.php:24 content-audio.php:35 content-chat.php:34
+#: content-gallery.php:35 content-image.php:34 content-link.php:35
+#: content-quote.php:24 content-status.php:24 content-video.php:34
+#: content.php:52 image.php:85 page.php:41
+msgid "Pages:"
+msgstr "Страниц:"
+
+#. translators: %s: Post title. Only visible to screen readers.
+#: content-aside.php:17 content-audio.php:28 content-chat.php:27
+#: content-gallery.php:28 content-image.php:27 content-link.php:28
+#: content-quote.php:17 content-status.php:17 content-video.php:27
+#: content.php:45 functions.php:732
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Читать далее %s <span class=\"meta-nav\">&rarr;</span>"
+
+#: comments.php:72
+msgid "Comments are closed."
+msgstr "Обсуждение закрыто."
+
+#: comments.php:67
 msgid "Newer Comments &rarr;"
 msgstr "Следующие комментарии &rarr;"
 
-#: comments.php:46
+#: comments.php:66
 msgid "&larr; Older Comments"
 msgstr "&larr; Предыдущие комментарии"
 
-#: comments.php:45
+#. translators: Hidden accessibility text.
+#: comments.php:63
 msgid "Comment navigation"
 msgstr "Навигация по комментариям"
 
-#: author.php:31
-msgid "All posts by %s"
-msgstr "Все записи автора %s"
+#. translators: 1: The number of comments, 2: The post title.
+#: comments.php:35
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "%2$s: %1$s комментарий"
+msgstr[1] "%2$s: %1$s комментария"
+msgstr[2] "%2$s: %1$s комментариев"
 
-#: category.php:19
+#. translators: %s: Category title.
+#: category.php:22
 msgid "Category Archives: %s"
 msgstr "Архив рубрики: %s"
 
-#: author-bio.php:30
+#. translators: %s: Author display name.
+#: author.php:34
+msgid "All posts by %s"
+msgstr "Все записи автора %s"
+
+#. translators: %s: Author display name.
+#: author-bio.php:37
 msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Посмотреть все записи автора %s <span class=\"meta-nav\">&rarr;</span>"
 
-#: archive.php:35
-msgid "Archives"
-msgstr "Архивы"
-
-#: author-bio.php:26
+#. translators: %s: Author display name.
+#: author-bio.php:29
 msgid "About %s"
 msgstr "Об авторе %s"
 
-#: archive.php:33
-msgid "Yearly Archives: %s"
-msgstr "Архив за год: %s"
+#: archive.php:39
+msgid "Archives"
+msgstr "Архивы"
 
-#: archive.php:33
+#. translators: %s: Date.
+#: archive.php:37
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr "Y"
 
-#: archive.php:31
+#. translators: %s: Date.
+#: archive.php:37
+msgid "Yearly Archives: %s"
+msgstr "Архив за год: %s"
+
+#. translators: %s: Date.
+#: archive.php:34
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr "F Y"
 
-#: archive.php:31
+#. translators: %s: Date.
+#: archive.php:34
 msgid "Monthly Archives: %s"
 msgstr "Архив за месяц: %s"
 
-#: archive.php:29
+#. translators: %s: Date.
+#: archive.php:31
 msgid "Daily Archives: %s"
 msgstr "Архив за день: %s"
 
@@ -269,50 +493,24 @@ msgstr "По данному адресу ничего не найдено. По�
 msgid "This is somewhat embarrassing, isn&rsquo;t it?"
 msgstr "Неприятная новость"
 
-#: inc/back-compat.php:37 inc/back-compat.php:47 inc/back-compat.php:60
-msgid "Twenty Thirteen requires at least WordPress version 3.6. You are running version %s. Please upgrade and try again."
-msgstr "Тема Twenty Thirteen требует WordPress 3.6 или выше. У вас версия %s. Пожалуйста, обновите WordPress и попробуйте ещё раз."
-
-#: image.php:38
-msgid "Link to full-size image"
-msgstr "Ссылка на полноразмерное изображение"
-
-#: image.php:39
-msgid "Full resolution"
-msgstr "Полный размер"
-
-#: functions.php:243
-msgid "Appears on posts and pages in the sidebar."
-msgstr "Отображается в боковой колонке в записях и на страницах."
-
-#: functions.php:241
-msgid "Secondary Widget Area"
-msgstr "Дополнительная область"
-
-#: functions.php:231
-msgid "Main Widget Area"
-msgstr "Основная область"
-
-#: functions.php:233
-msgid "Appears in the footer section of the site."
-msgstr "Отображается в нижней части сайта."
-
-#. Theme URI of the plugin/theme
-msgid "http://wordpress.org/themes/twentythirteen"
-msgstr "http://wordpress.org/themes/twentythirteen"
-
-#. Description of the plugin/theme
-msgid "The 2013 theme for WordPress takes us back to the blog, featuring a full range of post formats, each displayed beautifully in their own unique way. Design details abound, starting with a vibrant color scheme and matching header images, beautiful typography and icons, and a flexible layout that looks great on any device, big or small."
-msgstr "Тема 2013 для WordPress заново открывает для нас ведение блога, предоставляя полный набор форматов записей, каждый из которых отображается в своём неповторимом стиле. Дизайн изобилует тщательно подобранными элементами, начиная с яркой цветовой схемы и соответствующих изображений заголовка, красивой типографики и иконок, а также гибкой разметки, которая превосходно выглядит на любых устройствах, больших и маленьких."
-
-#. translators: %s: Name of current post
-#: content-aside.php:16 content-audio.php:27 content-chat.php:26
-#: content-gallery.php:27 content-image.php:26 content-link.php:27
-#: content-quote.php:16 content-status.php:16 content-video.php:26
-#: content.php:44 functions.php:478
-msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Читать далее %s <span class=\"meta-nav\">&rarr;</span>"
-
 #: 404.php:16
 msgid "Not Found"
 msgstr "Не найдено"
+
+#. Author URI of the theme
+#: style.css footer.php:24
+#, gp-priority: low
+msgid "https://wordpress.org/"
+msgstr "https://ru.wordpress.org/"
+
+#. Author of the theme
+#: style.css
+#, gp-priority: low
+msgid "the WordPress team"
+msgstr "Команда WordPress"
+
+#. Theme URI of the theme
+#: style.css
+#, gp-priority: low
+msgid "https://wordpress.org/themes/twentythirteen/"
+msgstr "https://wordpress.org/themes/twentythirteen/"

@@ -7,18 +7,19 @@
 #### Технические характеристики:
 
 - **Домен:** audiobook.ru  
-- **Версия WP:** 4.1.1-ru_RU  
+- **Версия WP:** 6.6.1-ru_RU  
 - **Тема:** Audio Books  
-- **Последнее обновление:** 20.08.2014  
-- **Версия PHP:** < 7.0  
+- **Последнее обновление:** 20.08.2024  
+- **Версия PHP:** 8.\*  
 
 #### Версия Плагинов:
 
-- **Akismet Anti-spam: защита от спама:** 3.0.4  
-- **Hello Dolly:** 1.6  
-- **Multiple Post Thumbnails:** 1.6.4  
+- **Akismet Anti-spam: защита от спама:** 5.3.3  
+- **Hello Dolly:** 1.7.2  
+- **Multiple Post Thumbnails:** 1.7  
 - **Uppod:** 1.9  
 - **VK Comments:** 1.0  
+- **XML Sitemap Generator for Google:** 4.1.21  
 
 #### База данных:
 
@@ -31,5 +32,4 @@
 
 - **Логин:** admin  
 - **Пароль:** 7S@UTblelfClIM4aQvk  
-
 

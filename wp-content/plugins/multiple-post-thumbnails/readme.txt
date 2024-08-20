@@ -1,9 +1,10 @@
-=== Plugin Name ===
+=== Multiple Post Thumbnails ===
 Contributors: chrisscott, voceplatforms
 Tags: thumbnails, image, featured image
 Requires at least: 2.9.2
-Tested up to: 4.0
-Stable tag: 1.6.4
+Tested up to: 5.0
+Stable tag: 1.7
+Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 

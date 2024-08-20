@@ -3,12 +3,12 @@
 Plugin Name: Multiple Post Thumbnails
 Plugin URI: http://wordpress.org/extend/plugins/multiple-post-thumbnails/
 Description: Adds the ability to add multiple post thumbnails to a post type.
-Version: 1.6.4
+Version: 1.7
 Author: Chris Scott
-Author URI: http://voceplatforms.com/
+Author URI: http://iamzed.com/
 */
 
-/*  Copyright 2010 Chris Scott (cscott@voceconnect.com)
+/*  Copyright 2010 Chris Scott (chris@iamzed.com)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as
@@ -28,6 +28,14 @@ Author URI: http://voceplatforms.com/
 if (!class_exists('MultiPostThumbnails')) {
 
 	class MultiPostThumbnails {
+
+		/**
+		 * Records if the scripts and styles have been enqueued so that we only
+		 * do so once.
+		 *
+		 * @var boolean
+		 */
+		protected static $statics_enqueued = false;
 
 		public function __construct($args = array()) {
 			$this->register($args);
@@ -170,6 +178,10 @@ if (!class_exists('MultiPostThumbnails')) {
 		 * @return void
 		 */
 		public function enqueue_admin_scripts( $hook ) {
+			if ( self::$statics_enqueued ) {
+				return;
+			}
+
 			global $wp_version, $post_ID;
 			
 			// only load on select pages
@@ -186,6 +198,8 @@ if (!class_exists('MultiPostThumbnails')) {
 			}
 			
 			wp_enqueue_style( "mpt-admin-css", $this->plugins_url( 'css/multi-post-thumbnails-admin.css', __FILE__ ) );
+
+			self::$statics_enqueued = true;
 		}
 		
 		public function admin_header_scripts() {
@@ -233,14 +247,15 @@ if (!class_exists('MultiPostThumbnails')) {
 		 * @return string the URL of the plugin file
 		 */
 		private function plugins_url($relative_path, $plugin_path) {
-			$template_dir = get_template_directory();
+			$template_dir = get_stylesheet_directory();
 
 			foreach ( array('template_dir', 'plugin_path') as $var ) {
 				$$var = str_replace('\\' ,'/', $$var); // sanitize for Win32 installs
 				$$var = preg_replace('|/+|', '/', $$var);
 			}
+
 			if(0 === strpos($plugin_path, $template_dir)) {
-				$url = get_template_directory_uri();
+				$url = get_stylesheet_directory_uri();
 				$folder = str_replace($template_dir, '', dirname($plugin_path));
 				if ( '.' != $folder ) {
 					$url .= '/' . ltrim($folder, '/');
@@ -390,7 +405,7 @@ if (!class_exists('MultiPostThumbnails')) {
 				);
 			}
 			$format_string = '<p class="hide-if-no-js"><a title="%1$s" href="%2$s" id="set-%3$s-%4$s-thumbnail" class="%5$s" data-thumbnail_id="%7$s" data-uploader_title="%1$s" data-uploader_button_text="%1$s">%%s</a></p>';
-			$set_thumbnail_link = sprintf( $format_string, sprintf( esc_attr__( "Set %s" , 'multiple-post-thumbnails' ), $this->label ), $image_library_url, $this->post_type, $this->id, $url_class, $this->label, $thumbnail_id );
+			$set_thumbnail_link = sprintf( $format_string, sprintf( esc_attr__( "Set %s" , 'multiple-post-thumbnails' ), $this->label ), esc_url($image_library_url), $this->post_type, $this->id, $url_class, $this->label, $thumbnail_id );
 			$content = sprintf( $set_thumbnail_link, sprintf( esc_html__( "Set %s", 'multiple-post-thumbnails' ), $this->label ) );
 
 			if ($thumbnail_id && get_post($thumbnail_id)) {
@@ -464,6 +479,11 @@ if (!class_exists('MultiPostThumbnails')) {
 
 	}
 
-	if ( is_admin() )
-		load_plugin_textdomain( 'multiple-post-thumbnails', FALSE, basename( dirname( __FILE__ ) ) . '/languages/' );
+	if ( is_admin() ) {
+		$domain = 'multiple-post-thumbnails';
+		$locale = apply_filters('plugin_locale', get_locale(), $domain);
+		$mofile = $domain . '-' . $locale . '.mo';
+
+		load_textdomain( $domain, dirname( __FILE__ ) . '/languages/' . $mofile );
+	}
 }

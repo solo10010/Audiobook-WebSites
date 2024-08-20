@@ -28,7 +28,7 @@ body {
 	font-weight: 400;
 	font-size: 17px;
 	line-height: 1.6471;
-	margin: 20px 40px;
+	margin: auto 20px;
 	max-width: 660px;
 	vertical-align: baseline;
 }
@@ -69,7 +69,13 @@ h4 {
 	line-height: 1.4;
 }
 
-h5,
+h5 {
+	font-size: 18px;
+	letter-spacing: 0.1em;
+	line-height: 1.3333;
+	text-transform: uppercase;
+}
+
 h6 {
 	font-size: 17px;
 	letter-spacing: 0.1em;
@@ -163,7 +169,6 @@ pre {
 	font-size: 17px;
 	line-height: 1.2353;
 	margin-bottom: 28px;
-	max-width: 100%;
 	overflow: auto;
 	padding: 14px;
 	white-space: pre;
@@ -238,6 +243,11 @@ li > ol {
 	margin: 0 0 0 23px;
 }
 
+blockquote > ul,
+blockquote > ol {
+	margin-left: 28px;
+}
+
 dl {
 	margin: 0 0 28px;
 }
@@ -296,12 +306,8 @@ table td,
 img {
 	border: 0;
 	height: auto;
-	max-width: 660px;
+	max-width: 100%;
 	vertical-align: middle;
-}
-
-a img {
-	display: block;
 }
 
 figure {
@@ -350,7 +356,7 @@ a {
 	color: #707070;
 	font-family: "Noto Sans", sans-serif;
 	margin: 0 0 28px 0;
-	max-width: 660px;
+	max-width: 100%;
 	padding: 0;
 	text-align: inherit;
 }
