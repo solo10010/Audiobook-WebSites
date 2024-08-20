@@ -1,0 +1,28 @@
+User-agent: *
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+
+# Закрываем страницы с параметрами, которые могут создавать дубли
+Disallow: /*?s=*
+Disallow: /*?p=*
+Disallow: /*?replytocom
+
+# Закрываем страницы с архивами
+Disallow: /category/
+Disallow: /tag/
+Disallow: /author/
+Disallow: /date/
+
+# Закрываем фиды
+Disallow: /feed/
+Disallow: /comments/feed/
+
+# Закрываем файлы, которые не нужно индексировать
+Disallow: /wp-content/plugins/
+Disallow: /wp-content/themes/
+Disallow: /wp-content/cache/
+Disallow: /wp-login.php
+Disallow: /wp-register.php
+
+# Указываем ссылку на карту сайта (если она есть)
+Sitemap: https://example.com/sitemap.xml

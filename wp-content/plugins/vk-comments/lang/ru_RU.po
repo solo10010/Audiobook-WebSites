@@ -1,0 +1,177 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: VK-comments\n"
+"POT-Creation-Date: 2013-12-05 06:08+0400\n"
+"PO-Revision-Date: 2014-04-08 19:55+0300\n"
+"Last-Translator: Денис <at10tion.angry@yandex.ua>\n"
+"Language-Team: Seofine.ru <admin@seofine.ru>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: .\n"
+"Language: ru_RU\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+msgid "VK Comment options"
+msgstr "Параметры плагина VK-comments"
+
+msgid "VK widget options"
+msgstr "Настройки VK-виджета"
+
+msgid "Application ID"
+msgstr "ID приложения"
+
+msgid "If you do not have VC application for this site"
+msgstr ""
+"Если у вас еще нет ВК-приложения для данного сайта - <a target='_blank' "
+"href='http://vk.com/editapp?act=create'>создайте его</a>. Если приложение "
+"создано - <a target='_blank' href='http://vk.com/apps?act=settings'>выберите "
+"его из списка</a>."
+
+msgid "Displaying Comments"
+msgstr "Отображение комментариев"
+
+msgid "VC-show comments after the comment form WordPress"
+msgstr "Показывать ВК-комментарии после формы комментариев WordPress"
+
+msgid "VC-show comments before the comment form WordPress"
+msgstr "Показывать ВК-комментарии перед формой комментариев WordPress"
+
+msgid "Human output method comments"
+msgstr "Ручной способ вывода комментариев."
+
+msgid "Paste this code"
+msgstr ""
+" Вставьте этот код: <code>&lt;?php function_exists('vkComments') ? vkComments"
+"() : '' ?&gt;</code> в шаблон страницы."
+
+msgid "Choose whether to display comments"
+msgstr "Выберите способ отображения комментариев: автоматический или ручной"
+
+msgid "Width"
+msgstr "Ширина"
+
+msgid "Specifies the width of the box in pixels (integer> 300)"
+msgstr ""
+"Задает ширину блока в пикселах (целое число > 300). Если равно 0, то ширина "
+"не ограничена."
+
+msgid "Height"
+msgstr "Высота"
+
+msgid "Specifies the maximum height of the widget in pixels"
+msgstr ""
+"Задает максимальную высоту виджета в пикселях. Целое число > 500. Если равно "
+"0, то высота не ограничена.<br/>Если содержимое виджета больше, чем "
+"максимально допустимое, то появляется внутренняя прокрутка. Значение по "
+"умолчанию - 0."
+
+msgid "Limit"
+msgstr "Лимит"
+
+msgid "Number of comments per page (integer 5-100)"
+msgstr "Количество комментариев на странице (целое число 5-100)"
+
+msgid "Attachments"
+msgstr "Прикрепления"
+
+msgid "Graffiti"
+msgstr "Граффити"
+
+msgid "Photo"
+msgstr "Фотография"
+
+msgid "Audio Recording"
+msgstr "Аудиозапись"
+
+msgid "Video Recording"
+msgstr "Видеозапись"
+
+msgid "Link"
+msgstr "Ссылка"
+
+msgid "Specifies the ability to create attachments to the comments."
+msgstr "Задает возможность создания прикреплений к комментариям."
+
+msgid "Publication status"
+msgstr "Публикация в статус"
+
+msgid "Enabled"
+msgstr "Включена"
+
+msgid "Automatically publish a comment to user status."
+msgstr "Автоматическая публикация комментария в статус пользователю."
+
+msgid "Minimalistic view"
+msgstr "Минималистичный вид"
+
+msgid "Whether to use the minimalistic look of the widget"
+msgstr ""
+"Использовать ли минималистичный вид виджета - уменьшенный шрифт, "
+"уменьшенные<br/>миниатюры прикреплений, уменьшенные профильные изображения "
+"для комментариев 2го уровня."
+
+msgid "Update tape"
+msgstr "Обновление ленты"
+
+msgid "Disabled"
+msgstr "Отключено"
+
+msgid "Update disables tape comments in real time."
+msgstr "Отключает обновление ленты комментариев в реальном времени."
+
+msgid "Alert Settings"
+msgstr "Настройки оповещения"
+
+msgid "Notification"
+msgstr "Оповещение"
+
+msgid "Send e-mail notification"
+msgstr "Отправлять e-mail уведомление"
+
+msgid "Email address of recipient"
+msgstr "Email адрес получателя"
+
+msgid "Default:"
+msgstr "По умолчанию:"
+
+msgid "Email address of the sender"
+msgstr "Email адрес отправителя"
+
+msgid "Subject of the letter"
+msgstr "Тема письма"
+
+msgid "You can use these tags: blog name"
+msgstr ""
+"Вы можете использовать следующие теги: <code>[blog_name]</code> - для "
+"вставки названия блога"
+
+msgid "Text of letter"
+msgstr "Текст письма"
+
+msgid "You can use these tags:"
+msgstr ""
+"Вы можете использовать следующие теги: <code>[url]</code> - для вставки "
+"ссылки на страницу, где был добавлен комментарий;<br/><code>[comment]</code> "
+"- для вставки текста комментария; <code>[blog_name]</code> - для вставки "
+"названия блога."
+
+msgid "Selected automatically depending on the available width"
+msgstr "Выбирать автоматически в зависимости от доступной ширины"
+
+msgid "[blog_name] New comment"
+msgstr "[blog_name] Новый комментарий"
+
+msgid "Added new comment Vkontakte. <br/> URL: [url] <br/> Comment: [comment]"
+msgstr ""
+"Добавлен новый комментарий Вконтакте.<br/>URL: [url]<br/>Комментарий:<br/>"
+"[comment]"
+
+msgid "(image, video or sound)"
+msgstr "(картинка, видео или аудиозапись)"
+
+msgid "The settings are saved."
+msgstr "Настройки сохранены."
