@@ -28,8 +28,12 @@
 - **Юзер БД:** audiobook  
 - **Пароль БД:** o1N@i310k  
 
-### Доступы в Админку
+#### Доступы в Админку
 
 - **Логин:** admin  
 - **Пароль:** 7S@UTblelfClIM4aQvk  
 
+
+#### превью сайта
+
+![logo](https://raw.githubusercontent.com/solo10010/audiobook-web-site/main/site_preview.png "audiobook - web site")
